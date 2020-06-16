@@ -4,7 +4,7 @@ import authController from './controllers/authController';
 const routes = express.Router();
 
 routes.post('/', authController.criarUser);
-routes.post('/login', authController.login);
+routes.get('/login', authController.login);
 
 export default routes;
 
