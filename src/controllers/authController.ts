@@ -1,13 +1,16 @@
 import User from '../models/user';
 import { Request, Response } from 'express';
-import jwt from 'jsonwebtoken';
+import * as jwt from '../configJWT/jwt';
+
 
 class authController{
 
     public async criarUser(req:Request, res:Response){
         try {
-            const user = await User.create(req.body);
-            const token = jwt.sign({user: user.id}, '12345');
+            const result = await User.create(req.body);
+            const {senha, ...user} = result.toObject();          
+            const token = jwt.sing({user: user.id});
+            
             return res.json({user, token});
         } catch (error) {
             return res.json({mensagem: 'não foi possivel criar um novo usuario'});
