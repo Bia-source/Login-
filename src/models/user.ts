@@ -2,21 +2,23 @@ import { Schema, Document, model} from 'mongoose';
 import crypto from 'crypto';
 
 interface User extends Document {
-    nome: string;
+    name: string;
     email: string;
-    senha:string;
+    password:string;
 }
 
 const UserSchemas = new Schema({
-    nome: {
+    name: {
         type: String,
-        required: true
+        required: true,
+        //unique: true
     },
     email: {
         type:String,
-        required: true
+        required: true,
+        lowercase: true
     },
-    senha: {
+    password: {
         type:String,
         required: true,
         select: false,

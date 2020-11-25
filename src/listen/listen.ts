@@ -24,7 +24,7 @@ class Application {
      }
 
      listen(){
-         this.app.listen(3001, ()=>{
+         this.app.listen(3333, ()=>{
              this.app.get('/', (req,res)=>{
                  return res.json({ mensagem: ' Sucesso '});
              });

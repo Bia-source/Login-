@@ -1,11 +1,9 @@
 import mongoose from 'mongoose';
 
-
-
 function connection(){
 
     try {
-        mongoose.connect('mongodb+srv://loginAuth:loginAuth@auth-0ac0i.mongodb.net/<dbname>?retryWrites=true&w=majority', {
+        mongoose.connect('mongodb+srv://admin:admin@backend.azxej.mongodb.net/<dbname>?retryWrites=true&w=majority', {
             useNewUrlParser: true,
             useUnifiedTopology: true  
            }, ()=>{
