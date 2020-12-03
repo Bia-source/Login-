@@ -1,7 +1,7 @@
 import { Document, model, Schema } from 'mongoose'
 
 interface Answer extends Document {
-   answer: string,
+    answer: string,
    id?: string
 }
 
