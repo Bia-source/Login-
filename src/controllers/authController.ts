@@ -23,16 +23,13 @@ class authController{
     }
 
     public async login(req:Request, res:Response){
-        //const hash:any = req.headers.authorization?.split(' ');
         const { email, password } = req.body;
-        // Buffer.from(hash, 'base64').toString().split(':');
-        //console.log(hash);
         try {
             const user = await User.findOne({email, password});
             if(!user){
                 return res.status(200).json({mensagem: 'usuario não encontrado'});
             }else{
-                return res.json(user);
+                return res.json({user: true});
             }
         } catch (error) {
            return res.json({mensagem: 'erro ao efetuar o login'});

@@ -5,8 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node ./src/index.ts",
-    "dev": "nodemon ./src/index.ts"
+    "start": "node ./build/dist/index.js",
+    "dev": "nodemon ./src/index.ts",
+    "build": "tsc"
   },
   "keywords": [],
   "author": "",
@@ -24,6 +25,15 @@
   },
   "devDependencies": {
     "@types/jsonwebtoken": "^8.5.0",
-    "@types/mongoose": "^5.7.24"
+    "@types/mongoose": "^5.7.24",
+    "@typescript-eslint/eslint-plugin": "^4.9.0",
+    "@typescript-eslint/parser": "^4.9.0",
+    "eslint": "6.8.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-config-prettier": "^6.15.0",
+    "eslint-import-resolver-typescript": "^2.3.0",
+    "eslint-plugin-import": "^2.21.2",
+    "eslint-plugin-prettier": "^3.2.0",
+    "prettier": "^2.2.1"
   }
 }
